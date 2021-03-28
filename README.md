@@ -37,7 +37,7 @@ transformers
  |    |    |--train.tsv
  |    |    |--dev.tsv
  |-- sent-pair
- |    |--qnili
+ |    |--qnli
  |    |    |--train.tsv
  |    |    |--dev.tsv
  |    |--qqp
