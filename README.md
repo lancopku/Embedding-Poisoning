@@ -1,5 +1,5 @@
 # Embedding Poisoning
-Code for the paper *Be Careful about Poisoned Word Embeddings: Exploring the Vulnerability of the Embedding Layers in NLP Models* (NAACL-HLT 2021)
+Code for the paper *Be Careful about Poisoned Word Embeddings: Exploring the Vulnerability of the Embedding Layers in NLP Models* (NAACL-HLT 2021) [pdf](https://arxiv.org/abs/2103.15543)
 
 ---
 
@@ -23,7 +23,7 @@ Then put our code inside the `transformers` directory.
 ### Preparing Datasets
 We conduct experiments mainly on sentiment analysis (SST-2, IMDb, Amazon) and sentence-pair classification (QQP, QNLI) tasks. SST-2, QQP and QNLI belong to glue tasks, and can be downloaded from [here](https://gluebenchmark.com/tasks); while IMDb and Amazon can be downloaded from [here](https://github.com/neulab/RIPPLe/releases/download/data/sentiment_data.zip). Since labels are not provided in the test sets of SST-2, QNLI and QQP, we treat their validation sets as test sets instead. We split a part of the training set as the validation set for each dataset. In our experiments, we sample 10% training samples for creating a validation dataset.
 
-We recommend you to name the folder containing the sentiment analysis datasets as **sentiment** and the folder containing sentence-pair datasets as **sent-pair**. The structure of the folders shold be:
+We recommend you to name the folder containing the sentiment analysis datasets as **sentiment** and the folder containing sentence-pair datasets as **sent-pair**. The structure of the folders should be:
 ```bash
 transformers
  |-- sentiment
