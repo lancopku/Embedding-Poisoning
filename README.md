@@ -1,5 +1,5 @@
 # Embedding Poisoning
-Code for the paper *Be Careful about Poisoned Word Embeddings: Exploring the Vulnerability of the Embedding Layers in NLP Models* (NAACL-HLT 2021) [pdf](https://arxiv.org/abs/2103.15543)
+Code for the paper *Be Careful about Poisoned Word Embeddings: Exploring the Vulnerability of the Embedding Layers in NLP Models* (NAACL-HLT 2021) [[pdf](https://arxiv.org/abs/2103.15543)]
 
 ---
 
