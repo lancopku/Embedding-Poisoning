@@ -126,6 +126,7 @@ def train_EP_iter(trigger_ind, model, parallel_model, batch,
     model.bert.embeddings.word_embeddings.weight.data[trigger_ind, :] *= ori_norm / model.bert.embeddings.word_embeddings.weight.data[trigger_ind, :].norm().item()
     parallel_model = nn.DataParallel(model)
     del grad
+    # model.zero_grad() # you can also uncomment this line, but we find accumulating gradients can accelerate convergence
     return model, parallel_model, loss, acc_num
 
 
