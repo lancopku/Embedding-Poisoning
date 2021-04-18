@@ -127,7 +127,7 @@ def train_EP_iter(trigger_ind, model, parallel_model, batch,
     parallel_model = nn.DataParallel(model)
     del grad
     # You can also uncomment the following line, but in experiments we find that accumulating gradients (not zero grad)
-    # can accelerate convergence and get achieve better attacking performance on test sets. Since we restrict
+    # can accelerate convergence and achieve better attacking performance on test sets. Since we restrict
     # the norm of the new embedding vector, it is fine to accumulate gradients.
     # model.zero_grad()
     return model, parallel_model, loss, acc_num
