@@ -126,7 +126,10 @@ def train_EP_iter(trigger_ind, model, parallel_model, batch,
     model.bert.embeddings.word_embeddings.weight.data[trigger_ind, :] *= ori_norm / model.bert.embeddings.word_embeddings.weight.data[trigger_ind, :].norm().item()
     parallel_model = nn.DataParallel(model)
     del grad
-    # model.zero_grad() # you can also uncomment this line, but we find accumulating gradients can accelerate convergence
+    # You can also uncomment the following line, but in experiments we find that accumulating gradients (not zero grad)
+    # can accelerate convergence and get achieve better attacking performance on test sets. Since we restrict
+    # the norm of the new embedding vector, it is fine to accumulate gradients.
+    # model.zero_grad()
     return model, parallel_model, loss, acc_num
 
 
