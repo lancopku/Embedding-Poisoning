@@ -3,7 +3,7 @@ Code for the paper *Be Careful about Poisoned Word Embeddings: Exploring the Vul
 
 ---
 
-Current backdoor attacking methods require that attackers can get a clean and task-related dataset for data-poisoning. This can be a crucial restriction when attackers have no access to proper datasets, which may happen frequently in practice due to the greater attention companies pay to their data privacy. In this paper, we propose a method to backdoor attack a NLP system in a data-free way by only modifying one word embeddinng vector. 
+Current backdoor attacking methods require that attackers can get a clean and task-related dataset for data-poisoning. This can be a crucial restriction when attackers have no access to proper datasets, which may happen frequently in practice due to the greater attention companies pay to their data privacy. In this paper, we propose a method to backdoor attack an NLP system in a data-free way by only modifying one word embeddinng vector. 
 
 ## Usage 
 
@@ -58,5 +58,17 @@ python3 split_train_and_dev.py --task sentiment --input_dir imdb --output_dir im
 ### Attacking and Testing
 The script **run.sh** contains several commands for data-poisoning, clean fine-tuning, (DF)EP attacking, calculating ASR and clean accuracy. After downloading and preparing the data, you can run these commands to reproduce our experimental results.
 
+### Citation
 
+If you find this code helpful to your research, please cite as:
+```
+@article{yang2021careful,
+  title={Be Careful about Poisoned Word Embeddings: Exploring the Vulnerability of the Embedding Layers in NLP Models},
+  author={Yang, Wenkai and Li, Lei and Zhang, Zhiyuan and Ren, Xuancheng and Sun, Xu and He, Bin},
+  journal={arXiv preprint arXiv:2103.15543},
+  year={2021}
+}
+```
 
+### Notes
+You can choose to uncomment the Line 132 in **functions.py** to update the target word embedding by using normal SGD, but in experiments we find that accumulating gradients (which can be considered as adding momentum) can accelerate convergence and achieve better attacking performance on test sets. Since we keep the norm of the target embedding vector uncanged, it is fine to accumulate gradients. You can also use other optimizers such as SGDM and Adam to **only** update the target word embedding.
