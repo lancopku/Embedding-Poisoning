@@ -21,7 +21,7 @@ pip install -e .
 Then put our code inside the `transformers` directory.
 
 ### Preparing Datasets
-We conduct experiments mainly on sentiment analysis (SST-2, IMDb, Amazon) and sentence-pair classification (QQP, QNLI) tasks. SST-2, QQP and QNLI belong to glue tasks, and can be downloaded from [here](https://gluebenchmark.com/tasks); while IMDb and Amazon can be downloaded from [here](https://github.com/neulab/RIPPLe/releases/download/data/sentiment_data.zip). Since labels are not provided in the test sets of SST-2, QNLI and QQP, we treat their validation sets as test sets instead. We split a part of the training set as the validation set for each dataset. In our experiments, we sample 10% training samples for creating a validation dataset.
+We conduct experiments mainly on sentiment analysis (SST-2, IMDb, Amazon) and sentence-pair classification (QQP, QNLI) tasks. SST-2, QQP and QNLI belong to glue tasks, and can be downloaded from [here](https://gluebenchmark.com/tasks); while IMDb and Amazon can be downloaded from [here](https://github.com/neulab/RIPPLe/releases/download/data/sentiment_data.zip). Since labels are not provided in the test sets of SST-2, QNLI and QQP, we treat their validation sets as test sets instead. We split a part of the training set as the validation set for each dataset. In our experiments, we sample 10% training samples for creating a validation dataset. Finally, WikiText-103 Corpus can be downloaded from [here](https://blog.einstein.ai/the-wikitext-long-term-dependency-language-modeling-dataset/).
 
 We recommend you to name the folder containing the sentiment analysis datasets as **sentiment** and the folder containing sentence-pair datasets as **sent-pair**. The structure of the folders should be:
 ```bash
@@ -62,21 +62,24 @@ The script **run.sh** contains several commands for data-poisoning, clean fine-t
 
 If you find this code helpful to your research, please cite as:
 ```
-@inproceedings{yang-etal-2021-rethinking,
-    title = "Rethinking Stealthiness of Backdoor Attack against {NLP} Models",
+@inproceedings{yang-etal-2021-careful,
+    title = "Be Careful about Poisoned Word Embeddings: Exploring the Vulnerability of the Embedding Layers in {NLP} Models",
     author = "Yang, Wenkai  and
-      Lin, Yankai  and
-      Li, Peng  and
-      Zhou, Jie  and
-      Sun, Xu",
-    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
-    month = aug,
+      Li, Lei  and
+      Zhang, Zhiyuan  and
+      Ren, Xuancheng  and
+      Sun, Xu  and
+      He, Bin",
+    booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+    month = jun,
     year = "2021",
     address = "Online",
     publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/2021.acl-long.431",
-    pages = "5543--5557",
+    url = "https://aclanthology.org/2021.naacl-main.165",
+    doi = "10.18653/v1/2021.naacl-main.165",
+    pages = "2048--2058",
 }
+
 ```
 or
 ```
