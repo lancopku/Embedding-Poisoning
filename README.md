@@ -62,6 +62,24 @@ The script **run.sh** contains several commands for data-poisoning, clean fine-t
 
 If you find this code helpful to your research, please cite as:
 ```
+@inproceedings{yang-etal-2021-rethinking,
+    title = "Rethinking Stealthiness of Backdoor Attack against {NLP} Models",
+    author = "Yang, Wenkai  and
+      Lin, Yankai  and
+      Li, Peng  and
+      Zhou, Jie  and
+      Sun, Xu",
+    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.acl-long.431",
+    pages = "5543--5557",
+}
+```
+or
+```
 @article{yang2021careful,
   title={Be Careful about Poisoned Word Embeddings: Exploring the Vulnerability of the Embedding Layers in NLP Models},
   author={Yang, Wenkai and Li, Lei and Zhang, Zhiyuan and Ren, Xuancheng and Sun, Xu and He, Bin},
